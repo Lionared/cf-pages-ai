@@ -2,9 +2,8 @@
 import {useState} from "react";
 import {Flex, Input, Button} from 'antd';
 import {LeftCircleFilled} from "@ant-design/icons";
-import css from "styled-jsx/css";
 
-export default function (props: {onSendMessage: CallableFunction}) {
+export default function ChatForm (props: {onSendMessage: CallableFunction}) {
     const {onSendMessage} = props;
     const [message, setMessage] = useState('');
 

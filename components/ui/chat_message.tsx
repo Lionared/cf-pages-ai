@@ -1,6 +1,6 @@
 import {Message} from "@/components/types/types.ts";
 
-export default function (props: {message: Message}) {
+export default function ChatMessage (props: {message: Message}) {
     const {message} = props
     return (
         <div>
