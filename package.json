@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.0",
+    "antd": "^5.18.3",
     "next": "14.2.4",
+    "rc-virtual-list": "^3.14.3",
     "react": "^18",
     "react-dom": "^18"
   },
