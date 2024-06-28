@@ -31,3 +31,13 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
