@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, useCallback, useRef } from "react";
-import { Layout } from "antd";
-import { type Message } from "@/components/types/types.ts";
+import React, {useCallback, useEffect, useRef, useState} from "react";
+import {Layout} from "antd";
+import {type Message} from "@/components/types/types.ts";
 import ChatMessage from "@/components/ui/chat_message.tsx";
 import ChatForm from "@/components/ui/forms.tsx";
-import { sendGPT } from "@/components/server/ai_worker.ts";
+import {sendGPT} from "@/components/server/ai_worker.ts";
 
 const { Header, Content, Footer } = Layout;
 
@@ -54,13 +54,11 @@ export default function Page() {
     setIsAnswering(true);
     const stream = await readStream(message);
     if (stream !== undefined && stream !== null) {
-      readStreamData(stream);
+      await readStreamData(stream);
     }
   };
   const readStream = async (msg: string) => {
-    const stream = await sendGPT(msg);
-    console.log("sendGPT result:" + stream);
-    return stream;
+    return await sendGPT(msg);
   };
 
   const readStreamData = useCallback(

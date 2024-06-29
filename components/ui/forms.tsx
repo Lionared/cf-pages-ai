@@ -10,7 +10,7 @@ export default function ChatForm(props: {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: any) => {
-    // e.preventDefault();
+    e.preventDefault();
     if (!message || isAnswering) return;
     if (message.trim()) {
       onSendMessage(message);
@@ -18,7 +18,9 @@ export default function ChatForm(props: {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+        onSubmit={handleSubmit}
+    >
       <Flex>
         <Input
           type="text"
